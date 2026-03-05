@@ -220,7 +220,7 @@ def _find_foreign_city_nominatim(query: str, result: _GeoObject, max_retry: int 
             logger.error("Attempt %d/%d, sleeping for %d seconds", current_try, max_retry, time_to_sleep)
             time.sleep(time_to_sleep)
         except GeocoderNotFound as e:
-            logger.error(f"Geocoding error for query=\"%s\": %s", query, e)
+            logger.error("Geocoding error for query=\"%s\": %s", query, e)
             return query
 
     return query

@@ -9,7 +9,7 @@ import pandas as pd
 
 from .fiscal_countries import FiscalCountries
 from .utils import is_empty
-from .places_infer import get_country_alpha_from_name, infer_place
+from .places_infer import get_country_alpha_from_name
 
 logger = logging.getLogger(__name__)
 

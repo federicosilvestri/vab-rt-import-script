@@ -379,7 +379,7 @@ def clean_doc_rele_by(value):
     return value.upper()
 
 
-def process_docs(df: pd.DataFrame):
+def process(df: pd.DataFrame):
     df['dl_release_authority'] = df['pat_rilasc_da'].apply(clean_doc_id_rilasciato_da)
     df['dl_release_date'] = df['pat_rilasc_il'].apply(clean_date)
     df['dl_expiry_date'] = df['pat_scad'].apply(clean_date)

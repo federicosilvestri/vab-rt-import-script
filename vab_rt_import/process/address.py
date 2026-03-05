@@ -47,7 +47,7 @@ def clean_email(value):
     match = re.search(r'[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}', value)
     return match.group(0) if match else pd.NA
 
-def process_address(df: pd.DataFrame) -> pd.DataFrame:
+def process(df: pd.DataFrame) -> pd.DataFrame:
     df['residente_a'] = df['residente_a'].apply(clean_field)
     df['provincia'] = df['provincia'].apply(clean_field)
     df['address_query'] = df[['residente_a', 'provincia']].apply(
@@ -76,4 +76,4 @@ if __name__ == '__main__':
     from vab_rt_import.source import get_data
 
     df = get_data()
-    process_address(df)
+    process(df)

@@ -2,7 +2,7 @@
 import pandas as pd
 from vab_rt_import.utils.places_infer import build_place_inference
 from vab_rt_import.utils.fiscal_clean import safe_check_fiscal_data, cf_error_counts
-from vab_rt_import import utils as utils
+from vab_rt_import.utils import utils as utils
 import logging
 from pathlib import Path
 
@@ -119,7 +119,7 @@ def apply_name_normalization(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def process_fiscal_data(df: pd.DataFrame) -> pd.DataFrame:
+def process(df: pd.DataFrame) -> pd.DataFrame:
     df = process_names(df)
     df = clean_junk(df)
     df = clean_gender(df)
@@ -131,3 +131,4 @@ def process_fiscal_data(df: pd.DataFrame) -> pd.DataFrame:
     df = apply_name_normalization(df)
 
     return df[FINAL_COLUMNS]
+

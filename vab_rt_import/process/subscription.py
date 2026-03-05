@@ -139,7 +139,7 @@ def process_num_tessera_socio_presentatore(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def process_subscription(df: pd.DataFrame) -> pd.DataFrame:
+def process(df: pd.DataFrame) -> pd.DataFrame:
     df = process_flags(df)
     df = process_n_tessera(df)
     df = process_socio_inattivo(df)
@@ -156,5 +156,5 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
 
     data = get_data()
-    data = process_subscription(data)
+    data = process(data)
     print(data)
